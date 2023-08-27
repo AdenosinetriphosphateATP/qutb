@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="myFunctionPrevious()">Prev</button>
+<button onclick="myFunctionNext()">Next</button>
+
+<input type="number" min="0" value="0" id="field1">
+<button onclick="myFunctiongotoNumPage()">GotoPage</button>
+
+
+
+
+<head>
+  <script type="text/javascript">
+    var number = 0;
+  </script>
+</head>
+
+
+<br><br>
+
+<iframe 
+src="https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/1_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf"
+style="overflow:hidden; height:100%; width:100%; position: absolute; " height="100%" width="100%"
+></iframe>
+</iframe>
+
+
+<script>
+let a = 0;
+let text1 = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/";
+let text2 = "_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
+let result = text1.concat(text2);
+
+
+
+
+
+function myFunctionNext() {
+  a=a+1;
+  document.getElementById("field1").value = a;
+  let result = text1.concat(a).concat(text2);
+  window.frames[0].location = result;
+  number=a;
+  //window.frames[0].location = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/101_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
+}
+
+function myFunctionPrevious() {
+  a=a-1;
+  document.getElementById("field1").value = a;
+  let result = text1.concat(a).concat(text2);
+  window.frames[0].location = result;
+  number=a;
+  //window.frames[0].location = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/99_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
+}
+function myFunctiongotoNumPage( ) {
+  a=parseInt(document.getElementById("field1").value);
+  let result = text1.concat(a).concat(text2);
+  window.frames[0].location = result;
+  number=a;
+  //window.frames[0].location = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/99_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
+}
+</script>
+
+</body>
+</html>
