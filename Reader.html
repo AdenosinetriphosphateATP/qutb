@@ -4,17 +4,15 @@
 <button onclick="myFunctionPrevious()">Prev</button>
 <button onclick="myFunctionNext()">Next</button>
 
-<input type="number" min="0" value="0" id="field1">
+<input type="number" min="0" value="1" id="field1">
 <button onclick="myFunctiongotoNumPage()">GotoPage</button>
+<input type="text" value="https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/" id="field2">
+
+<input type="text" value="_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf" id="field3">
 
 
 
 
-<head>
-  <script type="text/javascript">
-    var number = 0;
-  </script>
-</head>
 
 
 <br><br>
@@ -27,9 +25,12 @@ style="overflow:hidden; height:100%; width:100%; position: absolute; " height="1
 
 
 <script>
-let a = 0;
-let text1 = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/";
-let text2 = "_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
+let a = 1;
+//let text1 = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/";
+//let text2 = "_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
+
+let text1 = document.getElementById("field2").value;
+let text2 = document.getElementById("field3").value;
 let result = text1.concat(text2);
 
 
@@ -39,26 +40,29 @@ let result = text1.concat(text2);
 function myFunctionNext() {
   a=a+1;
   document.getElementById("field1").value = a;
+  let text1 = document.getElementById("field2").value;
+let text2 = document.getElementById("field3").value;  
   let result = text1.concat(a).concat(text2);
   window.frames[0].location = result;
   number=a;
-  //window.frames[0].location = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/101_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
 }
 
 function myFunctionPrevious() {
   a=a-1;
   document.getElementById("field1").value = a;
+  let text1 = document.getElementById("field2").value;
+let text2 = document.getElementById("field3").value;
   let result = text1.concat(a).concat(text2);
   window.frames[0].location = result;
   number=a;
-  //window.frames[0].location = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/99_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
 }
 function myFunctiongotoNumPage( ) {
   a=parseInt(document.getElementById("field1").value);
+  let text1 = document.getElementById("field2").value;
+let text2 = document.getElementById("field3").value;
   let result = text1.concat(a).concat(text2);
   window.frames[0].location = result;
   number=a;
-  //window.frames[0].location = "https://sabrango.github.io/themoon/pdf/NatureMagazine20180104/99_PDFsam_Nature%20Magazine%207686%20-%202018-01-04.pdf";
 }
 </script>
 
